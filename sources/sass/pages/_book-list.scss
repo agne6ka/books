@@ -1,0 +1,16 @@
+.book-list {
+  h2 {
+    margin-bottom: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    thead {
+      font-weight: 600;
+    }
+    tr, td {
+      border: 1px solid $color-black;
+      padding: 10px;
+    }
+  }
+}
+
