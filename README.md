@@ -9,4 +9,4 @@ If there is a problem with 'node' invoke `ln -s /usr/bin/nodejs /usr/bin/node`
 
 Install webpack: `npm install webpack -g`
 
-Cmd: `npm install` than `npm start` (with watch) or `npm build`
+Cmd: `npm install` (install submodules) than `npm start` (start watching)

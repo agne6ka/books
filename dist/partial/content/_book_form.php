@@ -8,28 +8,34 @@
                 <div class="form-group">
                     <label for="photo">Zdjęcie</label>
                     <input type="file" id="photo" name="photo">
+                    <div class="error-wrap"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Tytuł</label>
                     <input type="text" class="form-control" id="title" name="title">
+                    <div class="error-wrap"></div>
                 </div>
                 <div class="form-group">
                     <label for="author">Autor</label>
                     <input type="text" class="form-control" id="author" name="author">
+                    <div class="error-wrap"></div>
                 </div>
                 <div class="form-group">
                     <label for="page">Ilość stron</label>
-                    <input type="text" class="form-control" id="page" name="page">
+                    <input type="number" class="form-control" id="page" name="page">
+                    <div class="error-wrap"></div>
                 </div>
                 <div class="radio">
                     <label for="type"><input type="radio" id="backend" name="type"> Backend</label>
                     <label for="type"><input type="radio" id="frontend" name="type"> Front-end</label>
                     <label for="type"><input type="radio" id="practice" name="type"> Good practise</label>
                     <label for="type"><input type="radio" id="architecture" name="type"> Architecture</label>
+                    <div class="error-wrap"></div>
                 </div>
                 <div class="form-group">
                     <label for="desc">Opis</label>
                     <textarea type="text" class="form-control" id="desc" name="desc"></textarea>
+                    <div class="error-wrap"></div>
                 </div>
                 <button class="btn btn-success" type="submit">ADD NEW</button>
             </form>

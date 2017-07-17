@@ -1,6 +1,4 @@
-import '../sass/main.scss';
-
-import Component from './components/component';
+import FormComponent from './components/FormComponent';
 
 class App {
     constructor() {
@@ -8,9 +6,9 @@ class App {
     }
 
     init() {
-        let component = new Component();
+        let component = new FormComponent();
 
-        component.printMessage();
+        component.formHandler();
     }
 }
 
