@@ -4,7 +4,7 @@
             <h3>Add new book to book list</h3>
         </div>
         <div class="new-book-section_form">
-            <form id="form" action="partial/modules/add_book.php" method="post">
+            <form id="form" action="partial/modules/add_book.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="photo">Zdjęcie</label>
                     <input type="file" id="photo" name="photo">
@@ -21,8 +21,8 @@
                     <div class="error-wrap"></div>
                 </div>
                 <div class="form-group">
-                    <label for="page">Ilość stron</label>
-                    <input type="number" class="form-control" id="page" name="page">
+                    <label for="pages">Ilość stron</label>
+                    <input type="number" class="form-control" id="pages" name="pages">
                     <div class="error-wrap"></div>
                 </div>
                 <div class="radio">

@@ -7,7 +7,7 @@ $url = $_SERVER['REQUEST_URI'];
 $explode = explode('?', $url);
 
 if(strpos($url, '?') === false) {
-    http_redirect('Workshops/books/dist/index.php?index');
+    header('Location: /Workshops/books/dist/index.php?index');
 } else {
     if($explode[1] === 'add-book'){
         include_once('partial/content/_book_form.php');
