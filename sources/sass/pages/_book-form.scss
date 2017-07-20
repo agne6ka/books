@@ -6,6 +6,11 @@
     }
   }
   &_form {
+    .image-preview {
+      img {
+        width: 200px;
+      }
+    }
     .error-wrap {
       span {
         font-size: 12px;

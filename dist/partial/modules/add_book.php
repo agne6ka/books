@@ -3,7 +3,6 @@
 require_once(__DIR__ . '/../../utils/connect.php');
 require_once(__DIR__ . '/../../partial/modules/Book.php');
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $photo = '';
     $title = '';
@@ -13,18 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $desc = '';
     $errors = [];
 
-    if ( isset($_FILES['photo']['error']) && ($_FILES['photo']['error']) === UPLOAD_ERR_OK) {
-        $name = $_FILES['photo']['name'];
-
-        move_uploaded_file(
-            $result = $_FILES['photo']['tmp_name'], ''. getcwd() .'/dist/assets/img/' . $name
-        );
-
-        if ($result) { echo '<p>Upload OK</p>';}else{ echo '<p>Error</p>';}
-        $photo = '/dist/assets/img/' . $name;
-    } else {
-        $errors['photo'] = 'Something went wrong with uploading the file';
-    }
     if (strlen(trim($_POST['title'])) >= 3 && strlen(trim($_POST['title'])) <= 25) {
         $title = $_POST['title'];
     } else {
@@ -50,6 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $errors['desc'] = 'Description must have above 3 and up to 255 characters';
     }
+    if ( isset($_FILES['photo']['error']) && ($_FILES['photo']['error']) === UPLOAD_ERR_OK) {
+        $name = $_FILES['photo']['name'];
+
+        move_uploaded_file(
+            $result = $_FILES['photo']['tmp_name'], '/home/agne6ka/Workspace/Workshops/books/dist/assets/img/' . $name
+        );
+
+        if (!$result) {
+            $errors['photo'] = 'Something went wrong with uploading the file';
+        }
+
+        $photo = '/dist/assets/img/' . $name;
+    } else {
+        $errors['photo'] = 'Please select the photo';
+    }
 
     if ($errors) {
         echo json_encode($errors, JSON_FORCE_OBJECT);
@@ -63,17 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $book->setDesc($desc);
         $book->setImgPath($photo);
 
-//        $book->setImgPath();
-
-        var_dump($book);
+        $book->setImgPath($photo);
 
         $createBook = $book->createBook($conn);
-        var_dump($createBook);
 
         if ($createBook === True) {
-            header('Location: /Workshops/books/dist/index.php?index');
-        } else {
-            echo 'Something went wrong';
+            $response_array['status'] = 'success';
+            echo json_encode($response_array);
         }
 
         $conn->close();

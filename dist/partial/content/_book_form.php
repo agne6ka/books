@@ -6,6 +6,7 @@
         <div class="new-book-section_form">
             <form id="form" action="partial/modules/add_book.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
+                    <div class="image-preview"><img id="previewing" src="assets/img/no-img.jpg"/></div>
                     <label for="photo">Zdjęcie</label>
                     <input type="file" id="photo" name="photo">
                     <div class="error-wrap"></div>

@@ -7,7 +7,7 @@ class App {
 
     init() {
         let component = new FormComponent();
-
+        component.checkFile();
         component.formHandler();
     }
 }

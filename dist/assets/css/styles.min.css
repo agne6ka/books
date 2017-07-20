@@ -5239,6 +5239,9 @@ button.close {
   .new-book-section_info h3 {
     font-weight: 600; }
 
+.new-book-section_form .image-preview img {
+  width: 200px; }
+
 .new-book-section_form .error-wrap span {
   font-size: 12px;
   color: #ff0000; }
